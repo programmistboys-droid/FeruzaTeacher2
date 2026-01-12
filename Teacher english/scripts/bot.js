@@ -10,6 +10,19 @@ if (!token) {
 
 const bot = new TelegramBot(token, { polling: true });
 
+// Send a startup greeting to an admin chat (if configured)
+const adminChatId = process.env.TELEGRAM_ADMIN_CHAT_ID || process.env.TELEGRAM_CHAT_ID;
+if (adminChatId) {
+  // small delay to ensure long polling is started
+  setTimeout(() => {
+    bot.sendMessage(adminChatId, 'Bot ishga tushdi. Salom!')
+      .then(() => console.log('Startup greeting sent to', adminChatId))
+      .catch(err => console.error('Failed to send startup greeting:', err));
+  }, 1000);
+} else {
+  console.log('No TELEGRAM_ADMIN_CHAT_ID or TELEGRAM_CHAT_ID set — startup greeting will not be sent.');
+}
+
 bot.on('polling_error', (err) => {
   console.error('Polling error:', err?.message || err);
 });

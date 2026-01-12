@@ -6,6 +6,7 @@ Environment variables:
 
 - `TELEGRAM_BOT_TOKEN` — required
 - `APP_URL` — optional, default `http://localhost:3000`
+- `TELEGRAM_ADMIN_CHAT_ID` — optional, if set the bot will send a startup greeting `"Bot ishga tushdi. Salom!"` to this chat when the bot process starts (falls back to `TELEGRAM_CHAT_ID` if present)
 
 Run locally:
 
