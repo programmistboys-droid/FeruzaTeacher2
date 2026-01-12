@@ -30,9 +30,15 @@ jobs:
       - name: SPA fallback (copy index.html to 404.html)
         run: cp "Teacher english/dist/index.html" "Teacher english/dist/404.html"
 
+      - name: Copy to deploy folder (avoid spaces in path)
+        run: |
+          rm -rf publish_dist
+          mkdir publish_dist
+          cp -r "Teacher english/dist/." publish_dist/
+
       - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: "Teacher english/dist"
+          folder: "publish_dist"
           token: ${{ secrets.GITHUB_TOKEN }}
