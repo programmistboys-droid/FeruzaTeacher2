@@ -18,11 +18,11 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        working-directory: ./Teacher\ english
+        working-directory: "Teacher english"
         run: npm ci
 
       - name: Build (set VITE_BASE for GitHub Pages)
-        working-directory: ./Teacher\ english
+        working-directory: "Teacher english"
         env:
           VITE_BASE: '/FeruzaTeacher2/'
         run: npm run build
