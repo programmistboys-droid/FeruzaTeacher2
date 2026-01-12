@@ -9,7 +9,10 @@
     "preview": "vite preview",
     "start": "vite preview --port 3000",
     "announce": "node ./scripts/announceWeb.js",
-    "bot": "node ./scripts/bot.js"
+    "bot": "node ./scripts/bot.js",
+    "pm2:start": "pm2 startOrRestart ../ecosystem.config.js --env production",
+    "pm2:stop": "pm2 stop ../ecosystem.config.js",
+    "pm2:restart": "pm2 restart ../ecosystem.config.js"
   },
   "dependencies": {
     "lucide-react": "^0.562.0",
