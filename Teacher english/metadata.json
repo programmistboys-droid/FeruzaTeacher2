@@ -1,0 +1,8 @@
+{
+  "name": "TeleGem Mini App",
+  "description": "A high-end Telegram Web App (TWA) template featuring a smart AI assistant powered by Gemini, a digital marketplace, and a sleek crypto wallet dashboard.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
